@@ -8,9 +8,18 @@
 </head>
 
 <body>
-    <h2>Enter URL to Generate QR Code</h2>
-    <input type="text" id="urlInput" placeholder="https://example.com" />
-    <button onclick="generateQR()">Generate</button>
+    <div id="title">
+        <img src="{{ url_for('static', filename='qr-code.png') }}" alt="Logo" id="logo">
+        <h1>QR Code Generator</h1>
+    </div>
+
+    <div id="qrCodeGenerator">
+        <h2>Enter URL</h2>
+        <form id="qrForm">
+            <input type="text" id="urlInput" placeholder="https://example.com" required />
+            <button type="submit">Generate</button>
+        </form>
+    </div>
 
     <div id="qrImage"></div>
 

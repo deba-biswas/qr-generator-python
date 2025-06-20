@@ -1,3 +1,8 @@
+document.getElementById("qrForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  generateQR();
+});
+
 async function generateQR() {
   const url = document.getElementById("urlInput").value;
   if (!url) {
@@ -16,7 +21,7 @@ async function generateQR() {
 
   const qrImageDiv = document.getElementById("qrImage");
   qrImageDiv.innerHTML = `
-      <img src="${qrURL}" alt="QR Code" /><br>
-      <a href="${qrURL}" download="qr_code.png">Download QR Code</a>
-    `;
+    <img src="${qrURL}" alt="QR Code" id="qrCodeImage" /><br>
+    <a href="${qrURL}" download="qr_code.png" id="downloadBtn">Download QR Code</a>
+  `;
 }
